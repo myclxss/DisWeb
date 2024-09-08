@@ -5,20 +5,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DisHub</title>
-  <style>
-    .player-card {
-      border: 1px solid #ccc;
-      padding: 10px;
-      margin: 10px;
-      background-color: #f9f9f9;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div style="background: red">
-  <p>DisHub</p>
-  <input type="text" id="searchInput" placeholder="Buscar jugador por nombre">
-  <div id="container"></div>
+<div class="container">
+  <div class="header">
+    <h2>DisHub</h2>
+  </div>
+  <div class="spinner" id="spinner"></div>
+  <table id="playerTable" class="player-table">
+    <thead>
+    <tr>
+      <th class="avatar-cell">Avatar</th>
+      <th class="name-cell">Name</th>
+      <th class="bosskills-cell">Boss Kills</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <div class="pagination">
+    <button id="prevPage">Previous</button>
+    <button id="nextPage">Next</button>
+  </div>
 </div>
 <script src="main.js"></script>
 </body>

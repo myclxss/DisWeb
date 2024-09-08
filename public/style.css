@@ -1,0 +1,74 @@
+/* public/styles.css */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.header {
+    margin-bottom: 20px;
+}
+.player-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+.player-table th, .player-table td {
+    border: 1px solid #ccc;
+    text-align: center; /* Center the content */
+}
+.player-table th {
+    background-color: #f2f2f2;
+}
+.player-table .avatar-cell {
+    width: 30px; /* Reduce the width of the avatar column */
+    text-align: center; /* Center the content */
+}
+.player-table .name-cell {
+    width: 200px; /* Adjust the width of the name column */
+}
+.player-table .bosskills-cell {
+    width: 100px; /* Adjust the width of the bosskills column */
+}
+.player-table img {
+    width: 30px;
+    height: 30px;
+}
+.pagination {
+    margin-top: 20px;
+}
+.pagination button {
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+}
+.spinner {
+    display: none; /* Hidden by default */
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    margin: 20px auto;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+/* public/style.css */
+#backButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}

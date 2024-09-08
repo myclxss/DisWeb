@@ -1,4 +1,8 @@
 // public/main.js
+let currentPage = 1;
+const playersPerPage = 15;
+let allPlayers = [];
+
 async function fetchData() {
     try {
         const response = await fetch('/data');
@@ -6,47 +10,81 @@ async function fetchData() {
             throw new Error('Network response was not ok');
         }
         const result = await response.json();
-        displayPlayers(result.slice(0, 10)); // Mostrar solo los primeros 10 jugadores inicialmente
-
-        const searchInput = document.getElementById('searchInput');
-        searchInput.addEventListener('input', () => {
-            const searchTerm = searchInput.value.toLowerCase();
-            const filteredPlayers = result.filter(player =>
-                player.name.toLowerCase().includes(searchTerm)
-            );
-            if (searchTerm === '') {
-                displayPlayers(result.slice(0, 10)); // Mostrar solo los primeros 10 jugadores si no hay filtro
-            } else {
-                displayPlayers(filteredPlayers);
-            }
-        });
+        allPlayers = result;
+        displayPlayers(allPlayers.slice(0, playersPerPage));
+        document.getElementById('spinner').style.display = 'none'; // Hide spinner after loading
+        document.getElementById('playerTable').style.display = 'table'; // Show table
+        document.querySelector('.pagination').style.display = 'block'; // Show pagination
     } catch (error) {
         console.error('Error fetching data:', error);
     }
 }
 
 function displayPlayers(players) {
-    const containerDiv = document.getElementById('container');
-    containerDiv.innerHTML = '';
+    const playerTableBody = document.querySelector('#playerTable tbody');
+    const fragment = document.createDocumentFragment();
 
     players.forEach(player => {
-        const cardDiv = document.createElement('div');
-        cardDiv.className = 'player-card';
+        const row = document.createElement('tr');
 
-        const uuidP = document.createElement('p');
-        uuidP.textContent = `UUID: ${player.uuid}`;
-        cardDiv.appendChild(uuidP);
+        const imgCell = document.createElement('td');
+        const img = document.createElement('img');
+        img.src = `https://mc-heads.net/avatar/${player.uuid}`;
+        img.alt = `${player.name}'s head`;
+        img.onerror = () => {
+            img.src = 'https://mc-heads.net/avatar/512/8667ba71-b85a-4004-af54-457a9734eed7';
+        };
+        imgCell.appendChild(img);
+        row.appendChild(imgCell);
 
-        const nameP = document.createElement('p');
-        nameP.textContent = `Name: ${player.name}`;
-        cardDiv.appendChild(nameP);
+        const nameCell = document.createElement('td');
+        nameCell.textContent = player.name;
+        nameCell.style.cursor = 'pointer';
+        nameCell.addEventListener('click', () => {
+            window.location.href = `player.html?uuid=${player.uuid}`;
+        });
+        row.appendChild(nameCell);
 
-        const bossKillsP = document.createElement('p');
-        bossKillsP.textContent = `Boss Kills: ${player.bossKills}`;
-        cardDiv.appendChild(bossKillsP);
+        const bossKillsCell = document.createElement('td');
+        bossKillsCell.textContent = player.bossKills;
+        row.appendChild(bossKillsCell);
 
-        containerDiv.appendChild(cardDiv);
+        fragment.appendChild(row);
     });
+
+    playerTableBody.innerHTML = '';
+    playerTableBody.appendChild(fragment);
 }
+
+function updatePagination() {
+    const start = (currentPage - 1) * playersPerPage;
+    const end = start + playersPerPage;
+    displayPlayers(allPlayers.slice(start, end));
+    document.getElementById('spinner').style.display = 'none'; // Hide spinner after updating
+}
+
+document.getElementById('prevPage').addEventListener('click', () => {
+    if (currentPage > 1) {
+        document.getElementById('spinner').style.display = 'block'; // Show spinner
+        setTimeout(() => {
+            currentPage--;
+            updatePagination();
+        }, 500); // Delay to simulate loading
+    }
+});
+
+document.getElementById('nextPage').addEventListener('click', () => {
+    if (currentPage * playersPerPage < allPlayers.length) {
+        document.getElementById('spinner').style.display = 'block'; // Show spinner
+        setTimeout(() => {
+            currentPage++;
+            updatePagination();
+        }, 500); // Delay to simulate loading
+    }
+});
+
+document.getElementById('playerTable').style.display = 'none'; // Hide table initially
+document.querySelector('.pagination').style.display = 'none'; // Hide pagination initially
+document.getElementById('spinner').style.display = 'block'; // Show spinner initially
 
 fetchData();

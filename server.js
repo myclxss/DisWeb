@@ -8,7 +8,8 @@ app.use(express.static('public'));
 
 app.get('/data', async (req, res) => {
     try {
-        const data = await fetchData();
+        const uuid = req.query.uuid;
+        const data = await fetchData(uuid);
         res.json(data);
     } catch (error) {
         res.status(500).json({ error: 'Failed to fetch data' });
