@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac3a92f1-e608-4a31-a1cc-7fc2b750d97d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/player.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/player.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/db.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,6 +26,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;myclxss&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/myclxss/DisWeb.git&quot;,
+    &quot;accountId&quot;: &quot;8c71d2b9-fbe4-420d-8895-c2a4c6731492&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -52,13 +58,13 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Program Files/nodejs/node.exe&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/anhuarruiz/Documents/code/web/DisWeb&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;C:/Program Files/nodejs/node&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;/Users/anhuarruiz/Library/Application Support/JetBrains/IntelliJIdea2024.2/node/versions/20.17.0/bin/node&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;settings.nodejs&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.2.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
@@ -71,7 +77,7 @@
     </key>
   </component>
   <component name="RunManager" selected="Node.js.server.js">
-    <configuration name="script.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/script.js" working-dir="$PROJECT_DIR$">
+    <configuration name="script.js" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/script.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
     <configuration name="server.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/server.js" working-dir="$PROJECT_DIR$">
@@ -80,7 +86,6 @@
     <recent_temporary>
       <list>
         <item itemvalue="Node.js.server.js" />
-        <item itemvalue="Node.js.script.js" />
       </list>
     </recent_temporary>
   </component>
@@ -110,6 +115,8 @@
       <workItem from="1725814910958" duration="29000" />
       <workItem from="1725815037929" duration="3717000" />
       <workItem from="1725821556284" duration="1445000" />
+      <workItem from="1725827158251" duration="232000" />
+      <workItem from="1725827581033" duration="1191000" />
     </task>
     <servers />
   </component>
