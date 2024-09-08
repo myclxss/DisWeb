@@ -5,29 +5,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DisHub</title>
+  <style>
+    .player-card {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin: 10px;
+      background-color: #f9f9f9;
+    }
+  </style>
 </head>
 <body>
-<div id="results"></div>
-<script>
-  async function fetchData() {
-    try {
-      const response = await fetch('/data');
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      const result = await response.json();
-      const resultsDiv = document.getElementById('results');
-      result.forEach(player => {
-        const p = document.createElement('p');
-        p.textContent = `UUID: ${player.uuid}, Join Count: ${player.joinCount}`;
-        resultsDiv.appendChild(p);
-      });
-    } catch (error) {
-      console.error('Error fetching data:', error);
-    }
-  }
-
-  fetchData();
-</script>
+<div style="background: red">
+  <p>DisHub</p>
+  <input type="text" id="searchInput" placeholder="Buscar jugador por nombre">
+  <div id="container"></div>
+</div>
+<script src="main.js"></script>
 </body>
 </html>
