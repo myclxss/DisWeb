@@ -1,0 +1,33 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DisHub</title>
+</head>
+<body>
+<div id="results"></div>
+<script>
+  async function fetchData() {
+    try {
+      const response = await fetch('/data');
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const result = await response.json();
+      const resultsDiv = document.getElementById('results');
+      result.forEach(player => {
+        const p = document.createElement('p');
+        p.textContent = `UUID: ${player.uuid}, Join Count: ${player.joinCount}`;
+        resultsDiv.appendChild(p);
+      });
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  }
+
+  fetchData();
+</script>
+</body>
+</html>
